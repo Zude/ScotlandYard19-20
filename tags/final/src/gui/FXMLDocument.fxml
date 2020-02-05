@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainVBox" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLDocumentController">
+  <children>
+    <MenuBar fx:id="menueBar" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Spiel">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#newGameClicked" text="Neues Spiel" />
+            <MenuItem mnemonicParsing="false" onAction="#saveGameClicked" text="Spiel Speichern" />
+            <MenuItem mnemonicParsing="false" onAction="#loadGameClicked" text="Spiel Laden" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Einstellungen">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#cheatModeClicked" text="MR X Cheat Mode" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+          <AnchorPane fx:id="mapPane" minHeight="50.0" minWidth="50.0" onMouseClicked="#handleMouseClickPane" prefHeight="814.0" prefWidth="1081.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="map" fitHeight="814.0" fitWidth="1081.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@images/Spielplan.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+          </AnchorPane>
+            <VBox fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="785.0" prefWidth="331.0" HBox.hgrow="NEVER">
+               <children>
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label fx:id="turnLabel" prefHeight="37.0" prefWidth="325.0" textAlignment="CENTER" />
+                        <HBox prefHeight="43.0" prefWidth="134.0">
+                           <children>
+                              <Label fx:id="undergroundTicketsLabel" prefHeight="17.0" prefWidth="59.0" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="43.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Underground.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="43.0" prefWidth="134.0">
+                           <children>
+                              <Label fx:id="busTicketsLabel" prefHeight="17.0" prefWidth="59.0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="43.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Bus.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="43.0" prefWidth="134.0">
+                           <children>
+                              <Label fx:id="taxiTicketsLabel" prefHeight="17.0" prefWidth="59.0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="43.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Taxi.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="43.0" prefWidth="134.0">
+                           <children>
+                              <Label fx:id="blackTicketsLabel" prefHeight="17.0" prefWidth="59.0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="43.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/BlackTicket.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Label fx:id="playerLabel" prefHeight="37.0" prefWidth="325.0" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <HBox spacing="2.0">
+                     <children>
+                        <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="150.0" spacing="3.0">
+                           <children>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="1" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl1" fitHeight="57.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="2" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl2" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: grey;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="3" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl3" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="4" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl4" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="5" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl5" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="6" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl6" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="7" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl7" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: grey;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="8" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl8" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="150.0" spacing="3.0">
+                           <children>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="18.0" text="9" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl9" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="10" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl10" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="27.0" text="11" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl11" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="12" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl12" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: grey;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="22.0" text="13" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl13" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="25.0" text="14" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl14" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="15" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl15" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="16" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl16" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="150.0" spacing="3.0">
+                           <children>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="17" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl17" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: grey;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl18" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="19" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl19" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="23.0" text="20" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl20" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="21" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl21" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="22" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl22" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: black;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="21.0" text="23" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl23" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox minHeight="43.0" minWidth="108.0" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: grey;">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="24.0" text="24" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="gl24" fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+  </children>
+</VBox>
